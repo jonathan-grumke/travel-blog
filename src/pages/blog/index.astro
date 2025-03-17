@@ -17,7 +17,7 @@ const posts = (await getCollection("blog")).sort(
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
 			main {
-				width: 960px;
+				width: 820px;
 			}
 			ul {
 				display: flex;
@@ -90,6 +90,18 @@ const posts = (await getCollection("blog")).sort(
 	<body>
 		<Header />
 		<main>
+			<h1>Reisetagebuch</h1>
+			<p>
+				Erlebe die Reise unseres Lebens hautnah mit uns. Tauche tief in
+				unsere Gedankenwelt ein, verfolge unsere Route auf Schritt und
+				Tritt und lass dich in die Weiten der Welt mitnehmen.
+			</p>
+			<p>
+				Wir lassen Deutschland hinter uns und bereisen 1 Jahr lang mit
+				dem Rucksack die Welt. Du erfährst hier in wöchentlichen Updates
+				nicht nur von unseren aktuellen Standorten, sondern auch von
+				unseren alltäglichen Abenteuern und wie wir uns dabei fühlten.
+			</p>
 			<section>
 				<ul>
 					{

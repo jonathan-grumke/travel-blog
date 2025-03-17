@@ -5,8 +5,8 @@
  */
 
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
+	--accent: #3E78B6;
+	--accent-dark: #2F5989;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
@@ -32,7 +32,7 @@ body {
 }
 
 main {
-	width: 720px;
+	width: 820px;
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;
