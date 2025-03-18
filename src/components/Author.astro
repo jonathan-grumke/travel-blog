@@ -1,9 +1,15 @@
 ---
 interface Props {
-    author: String;
+    author: string;
 }
 
 const { author } = Astro.props;
 ---
 
 <p>{author}</p>
+
+<style>
+    p {
+        color: rgb(var(--gray));
+    }
+</style>
