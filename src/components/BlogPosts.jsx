@@ -1,6 +1,4 @@
-import React from "react";
 import { getCollection } from "astro:content";
-import FormattedDate from "./FormattedDate.astro";
 import "./BlogPosts.css"
 
 const BlogPosts = async ({ collection, numberOfPosts }) => {
