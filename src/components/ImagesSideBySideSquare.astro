@@ -1,0 +1,58 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+import * as path from "path";
+
+interface Props {
+    assetPath1: string;
+    altText1?: string;
+    assetPath2: string;
+    altText2?: string;
+}
+
+const { assetPath1, altText1, assetPath2, altText2 } = Astro.props;
+const imagePath1 = path.join("/src/assets/", assetPath1);
+const imagePath2 = path.join("/src/assets/", assetPath2);
+const images = import.meta.glob<{ default: ImageMetadata }>(
+    "/src/assets/**/*.{jpeg,jpg,png,gif}"
+);
+if (!images[imagePath1])
+    throw new Error(
+        `"${imagePath1}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif}"`
+    );
+if (!images[imagePath2])
+    throw new Error(
+        `"${imagePath2}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif}"`
+    );
+---
+
+<div class="images-square">
+    <Image
+        src={images[imagePath1]()}
+        alt={altText1 ? altText1 : ""}
+        class={"image-square-half"}
+    />
+    <Image
+        src={images[imagePath2]()}
+        alt={altText2 ? altText2 : ""}
+        class={"image-square-half"}
+    />
+</div>
+
+<style>
+    .images-square {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .image-square-half {
+        width: calc(50% - 0.5rem);
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+    @media (max-width: 720px) {
+        .image-square-half {
+            width: 100%;
+        }
+    }
+</style>
