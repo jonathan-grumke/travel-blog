@@ -16,4 +16,31 @@ const blog = defineCollection({
     }),
 });
 
-export const collections = { blog };
+const travelGuide = defineCollection({
+    loader: glob({
+        base: "./src/content/travel-guide",
+        pattern: "**/*.{md,mdx}",
+    }),
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        updatedDate: z.coerce.date(),
+        heroImage: z.string().optional(),
+    }),
+});
+
+const travelDiary = defineCollection({
+    loader: glob({
+        base: "./src/content/travel-diary",
+        pattern: "**/*.{md,mdx}",
+    }),
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        pubDate: z.coerce.date(),
+        heroImage: z.string().optional(),
+        author: z.string(),
+    }),
+});
+
+export const collections = { blog, travelGuide, travelDiary };
