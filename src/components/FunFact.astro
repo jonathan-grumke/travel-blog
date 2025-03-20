@@ -1,0 +1,11 @@
+---
+import InfoBox from "./InfoBox.astro";
+
+interface Props {
+    content: string;
+}
+
+const { content } = Astro.props;
+---
+
+<InfoBox title="Fun Fact" icon="fun-fact" content={content} />

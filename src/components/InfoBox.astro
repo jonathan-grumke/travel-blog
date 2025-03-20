@@ -1,0 +1,63 @@
+---
+interface Props {
+    icon: string;
+    title: string;
+    content: string;
+}
+
+const { icon, title, content } = Astro.props;
+
+let src;
+
+switch (icon) {
+    case "fun-fact":
+        src = "/icons/tipp.svg";
+        break;
+    case "tipp":
+        src = "/icons/tipp.svg";
+        break;
+    case "erde":
+        src = "/icons/erde.svg";
+        break;
+    case "auto":
+        src = "/icons/auto.svg";
+        break;
+    case "kosten":
+        src = "/icons/kosten.svg";
+        break;
+    case "eintritt":
+        src = "/icons/eintritt.svg";
+        break;
+    case "unterkunft":
+        src = "/icons/unterkunft.svg";
+    default:
+        throw new Error(`"${icon}" is not a possible icon type`);
+}
+---
+
+<div class="fun-fact">
+    <img src={src} class="icon" />
+    <div class="info-text-container">
+        <p><strong>{title}:</strong>{" "}{content}</p>
+    </div>
+</div>
+
+<style>
+    .fun-fact {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    .icon {
+        width: calc(20% - 0.5rem);
+    }
+    .info-text-container {
+        width: calc(80% - 0.5rem);
+    }
+    .info-text-container p {
+        margin: 0;
+    }
+</style>
