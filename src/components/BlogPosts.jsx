@@ -9,12 +9,12 @@ const BlogPosts = async ({ collection, directory, numberOfPosts }) => {
     return (
         <>
             <section>
-                <h3 style={{ marginBottom: "20px" }}>Du hast unsere letzten Weekly Updates noch nicht gelesen?</h3>
+                <h3 style={{ marginBottom: "20px", marginTop: "40px" }}>Du hast unsere letzten Weekly Updates noch nicht gelesen?</h3>
                 <ul>
                     {
                         posts.map((post) => (
                             <li>
-                                <a href={`/directory/${post.id}/`}>
+                                <a href={`/${directory}/${post.id}/`}>
                                     <img
                                         width={720}
                                         height={360}
