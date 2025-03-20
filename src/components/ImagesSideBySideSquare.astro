@@ -14,15 +14,15 @@ const { assetPath1, altText1, assetPath2, altText2 } = Astro.props;
 const imagePath1 = path.join("/src/assets/", assetPath1);
 const imagePath2 = path.join("/src/assets/", assetPath2);
 const images = import.meta.glob<{ default: ImageMetadata }>(
-    "/src/assets/**/*.{jpeg,jpg,png,gif}"
+    "/src/assets/**/*.{jpeg,jpg,png,gif,JPG,PNG}"
 );
 if (!images[imagePath1])
     throw new Error(
-        `"${imagePath1}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif}"`
+        `"${imagePath1}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif,JPG,PNG}"`
     );
 if (!images[imagePath2])
     throw new Error(
-        `"${imagePath2}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif}"`
+        `"${imagePath2}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif,JPG,PNG}"`
     );
 ---
 
