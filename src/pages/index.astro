@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import BlogPosts from "../components/BlogPosts";
 ---
 
 <!doctype html>
@@ -46,6 +47,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 Augen. Du findest hier Reiserouten, Städtetrips, die schönsten
                 Sehenswürdigkeiten, Tipps und Empfehlungen rund um den Globus.
             </p>
+            <div class="prose">
+                <BlogPosts
+                    collection={"travelDiary"}
+                    directory={"travel-diary"}
+                    headline={"Hier findest du die neusten Updates unserer Weltreise!"}
+                    numberOfPosts={6}
+                />
+            </div>
         </main>
         <Footer />
     </body>

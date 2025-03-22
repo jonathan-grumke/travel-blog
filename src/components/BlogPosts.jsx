@@ -1,7 +1,7 @@
 import { getCollection } from "astro:content";
 import "./BlogPosts.css"
 
-const BlogPosts = async ({ collection, directory, numberOfPosts }) => {
+const BlogPosts = async ({ collection, directory, headline, numberOfPosts }) => {
     const posts = (await getCollection(collection)).sort(
         (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
     ).slice(0, numberOfPosts);
@@ -9,7 +9,7 @@ const BlogPosts = async ({ collection, directory, numberOfPosts }) => {
     return (
         <>
             <section>
-                <h3 style={{ marginBottom: "20px", marginTop: "40px" }}>Du hast unsere letzten Weekly Updates noch nicht gelesen?</h3>
+                <h3 style={{ marginBottom: "20px", marginTop: "40px" }}>{headline}</h3>
                 <ul>
                     {
                         posts.map((post) => (
