@@ -1,14 +1,13 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../consts";
 ---
 
 <header>
     <nav>
         <a style="padding:0;border-bottom:0;" href="/"
-            ><img src="/Logo.svg" alt="" style="width:9rem;height:9rem;" />
+            ><img src="/Logo.svg" alt="" style="width:12rem;height:12rem;" />
         </a>
-        <div class="internal-links">
+        <div class="internal-links header-links">
             <HeaderLink href="/">Home</HeaderLink>
             <HeaderLink href="/travel-diary">Reisetagebuch</HeaderLink>
             <HeaderLink href="/travel-guide">Reiseziele</HeaderLink>
@@ -53,7 +52,12 @@ import { SITE_TITLE } from "../consts";
         nav {
             display: flex;
             align-items: center;
+            flex-direction: column;
+        }
+        .header-links {
+            display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
     }
 </style>
