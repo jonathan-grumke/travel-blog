@@ -9,7 +9,11 @@ import BlogPosts from "../components/BlogPosts";
 <!doctype html>
 <html lang="de">
     <head>
-        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+        <BaseHead
+            title=`Reise mit uns | ${SITE_TITLE}`
+            `
+            description={SITE_DESCRIPTION}
+        />
     </head>
     <body>
         <Header />
@@ -20,7 +24,7 @@ import BlogPosts from "../components/BlogPosts";
                 zwei Reiseblogger, die dich für deine nächsten Reisen
                 inspirieren möchten.
             </p>
-            <p>
+            <p class="space-after">
                 Im Januar 2025 haben wir unsere Weltreise gestartet und nehmen
                 euch hier mit zu den schönsten Orten der Welt. Mehr darüber
                 erfährst du in unserem <a href="./blog/">Reisetagebuch</a>. Für
@@ -40,6 +44,11 @@ import BlogPosts from "../components/BlogPosts";
                 nicht nur von unseren aktuellen Standorten, sondern auch von
                 unseren alltäglichen Abenteuern und wie wir uns dabei fühlen.
             </p>
+            <a href="travel-diary">
+                <button class="button-primary space-after"
+                    >Zum Reisetagebuch</button
+                >
+            </a>
             <h2>Reiseziele</h2>
             <p>
                 Wir reisen liebend gern, und das nicht erst seit unserer
@@ -47,6 +56,11 @@ import BlogPosts from "../components/BlogPosts";
                 Augen. Du findest hier Reiserouten, Städtetrips, die schönsten
                 Sehenswürdigkeiten, Tipps und Empfehlungen rund um den Globus.
             </p>
+            <a href="travel-guide">
+                <button class="button-primary space-after"
+                    >Zu unseren Reisezielen</button
+                >
+            </a>
             <div class="prose">
                 <BlogPosts
                     collection={"travelDiary"}

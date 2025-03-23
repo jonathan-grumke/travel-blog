@@ -146,6 +146,23 @@ hr {
 	}
 }
 
+.button-primary {
+	color: white;
+	background-color: var(--accent);
+	font-size: 18px;
+	padding: 18px 24px;
+	border-radius: 8px;
+	border: 0;
+}
+
+.button-primary:hover {
+	background-color: var(--accent-dark);
+}
+
+.space-after {
+	margin-bottom: 3rem;
+}
+
 .sr-only {
 	border: 0;
 	padding: 0;
