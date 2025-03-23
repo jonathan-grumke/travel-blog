@@ -18,8 +18,31 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         <Header />
         <main>
             <h1>Kontakt</h1>
-            <p>Folge uns auf Instagram und Co!</p>
+            <div class="side-by-side">
+                <img
+                    style="margin: auto;"
+                    width="64"
+                    alt=""
+                    src="https://lookaside.fbsbx.com/elementpath/media/?media_id=1515764255735341&version=1723113684"
+                />
+                <p>
+                    Auf Instagram posten wir täglich neue Bilder und Videos.
+                    Dort kannst du unseren Tag quasi live mitverfolgen!
+                </p>
+            </div>
+            <a href="https://www.instagram.com/_me_monique/">
+                <button class="button-primary space-after"
+                    >Folge uns auf Instagram</button
+                >
+            </a>
         </main>
         <Footer />
     </body>
 </html>
+
+<style>
+    .side-by-side {
+        display: grid;
+        grid-template-columns: 1fr 7fr;
+    }
+</style>
