@@ -17,32 +17,83 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <body>
         <Header />
         <main>
-            <h1>Kontakt</h1>
-            <div class="side-by-side">
-                <img
-                    style="margin: auto;"
-                    width="64"
-                    alt=""
-                    src="https://lookaside.fbsbx.com/elementpath/media/?media_id=1515764255735341&version=1723113684"
-                />
-                <p>
-                    Auf Instagram posten wir täglich neue Bilder und Videos.
-                    Dort kannst du unseren Tag quasi live mitverfolgen!
-                </p>
+            <h1 class="space-after">Kontakt</h1>
+            <div class="contact-row space-after">
+                <div class="grid-image">
+                    <img alt="" src="/icons/instagram.png" />
+                </div>
+                <div class="grid-text">
+                    <p>
+                        Du willst noch mehr von unserer Reise sehen? Dann folge
+                        uns auf <strong>Instagram</strong>!
+                    </p>
+                </div>
+                <div class="grid-button">
+                    <a
+                        href="https://www.instagram.com/_me_monique/"
+                        target="_blank"
+                    >
+                        <button class="button-primary">Folge uns</button>
+                    </a>
+                </div>
             </div>
-            <a href="https://www.instagram.com/_me_monique/">
-                <button class="button-primary space-after"
-                    >Folge uns auf Instagram</button
-                >
-            </a>
+            <div class="contact-row space-after">
+                <div class="grid-image">
+                    <img alt="" src="/icons/youtube.png" />
+                </div>
+                <div class="grid-text">
+                    <p>
+                        Hin und wieder laden wir Videos von unserer Reise auf
+                        <strong>YouTube</strong> hoch. Schau sie dir gerne an!
+                    </p>
+                </div>
+                <div class="grid-button">
+                    <a
+                        href="https://www.youtube.com/@jonathangrumke"
+                        target="_blank"
+                    >
+                        <button class="button-primary">Zum Kanal</button>
+                    </a>
+                </div>
+            </div>
         </main>
         <Footer />
     </body>
 </html>
 
 <style>
-    .side-by-side {
-        display: grid;
-        grid-template-columns: 1fr 7fr;
+    .contact-row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 2rem;
+        align-items: center;
+    }
+    .grid-image {
+        width: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .grid-text {
+        width: calc(100% - 22rem);
+    }
+    .grid-button {
+        width: 14rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .grid-button a {
+        display: block;
+    }
+    @media (max-width: 720px) {
+        .contact-row {
+            flex-direction: column;
+        }
+        .grid-text {
+            width: 100%;
+            text-align: center;
+        }
     }
 </style>
