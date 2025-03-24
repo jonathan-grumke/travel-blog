@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import BlogPosts from "../components/BlogPosts";
+import ImageHorizontal from "../components/Images/ImageHorizontal.astro";
 ---
 
 <!doctype html>
@@ -24,7 +25,7 @@ import BlogPosts from "../components/BlogPosts";
                 zwei Reiseblogger, die dich für deine nächsten Reisen
                 inspirieren möchten.
             </p>
-            <p class="space-after">
+            <p>
                 Im Januar 2025 haben wir unsere Weltreise gestartet und nehmen
                 euch hier mit zu den schönsten Orten der Welt. Mehr darüber
                 erfährst du in unserem <a href="./blog/">Reisetagebuch</a>. Für
@@ -32,6 +33,7 @@ import BlogPosts from "../components/BlogPosts";
                 Geheimtipps, schönsten Reiserouten und Beiträge über Reiseziele
                 auf der ganzen Welt.
             </p>
+            <ImageHorizontal assetPath="madeira/surfen.jpg" />
             <h2>Reisetagebuch</h2>
             <p>
                 Erlebe die Reise unseres Lebens hautnah mit uns. Tauche tief in
@@ -49,6 +51,7 @@ import BlogPosts from "../components/BlogPosts";
                     >Zum Reisetagebuch</button
                 >
             </a>
+            <ImageHorizontal assetPath="madeira/jona.jpg" />
             <h2>Reiseziele</h2>
             <p>
                 Wir reisen liebend gern, und das nicht erst seit unserer
@@ -59,6 +62,17 @@ import BlogPosts from "../components/BlogPosts";
             <a href="travel-guide">
                 <button class="button-primary space-after"
                     >Zu unseren Reisezielen</button
+                >
+            </a>
+            <ImageHorizontal assetPath="madeira/east-end.jpg" />
+            <h2>Folge uns auf Social Media</h2>
+            <p>
+                Du willst noch mehr von unserer Reise sehen? Dann folge uns auf
+                Instagram!
+            </p>
+            <a href="https://www.instagram.com/_me_monique/" target="_blank">
+                <button class="button-primary space-after"
+                    >Zu unserem Instagram</button
                 >
             </a>
             <div class="prose">

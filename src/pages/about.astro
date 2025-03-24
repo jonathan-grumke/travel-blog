@@ -3,6 +3,8 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import ImageHorizontal from "../components/Images/ImageHorizontal.astro";
+import ImagesSideBySideVertical from "../components/Images/ImagesSideBySideVertical.astro";
 ---
 
 <!doctype html>
@@ -18,7 +20,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         <main>
             <h1>Wer ist Sun In My Pocket?</h1>
             <p>
-                Hey! Wir sind Jonathan (26) und Monique (28) – zwei Reiseblogger
+                Hey! Wir sind Jonathan (27) und Monique (29) – zwei Reiseblogger
                 aus Deutschland Nordrhein-Westfalen. Jonathan hat Physik
                 studiert und arbeitet seit 3 Jahren in der IT–Branche, während
                 ich in den Niederlanden studiert habe und seit 5 Jahren als
@@ -29,6 +31,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 ganzes Jahr lang um die Welt zu reisen. Dabei wollen wir euch
                 mitnehmen!
             </p>
+            <ImageHorizontal assetPath="madeira/couple-coast.jpg" />
             <h2>Wer ist Monique?</h2>
             <p>
                 Hmm…. Wer bin ich? Zuerst würde Ich mich als durchaus kreativen
@@ -44,6 +47,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 Mein größter Lebenstraum ist es die ganze Welt zu bereisen. …
             </p>
             <p>Achja und ich bin süchtig nach Matcha!</p>
+            <ImagesSideBySideVertical
+                assetPath1="verona/monique-fahrrad.jpg"
+                assetPath2="munich/oktoberfest-monique.JPG"
+            />
             <h2>Wer ist Jonathan?</h2>
             <p>
                 Der Junge mit den roten Haaren… das bin ich! Meine Freunde
@@ -58,6 +65,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 und lasse die Welt ihr Ding machen. Außerdem liebe ich Salat und
                 Apfelmus. Aber niemals zusammen!
             </p>
+            <ImageHorizontal assetPath="lago-di-braies/jona.jpg" />
             <h2>Warum „Sun In My Pocket“?</h2>
             <p>
                 Der erste Gedanke, der uns bei einem Jahr Weltreise kam, war
@@ -68,6 +76,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 wir die Weltreise antreten und unsere Begeisterung zum Reisen
                 widerspiegeln.
             </p>
+            <ImageHorizontal assetPath="verona/couple-colosseum.jpg" />
         </main>
         <Footer />
     </body>

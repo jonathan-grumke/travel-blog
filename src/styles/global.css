@@ -157,6 +157,7 @@ hr {
 
 .button-primary:hover {
 	background-color: var(--accent-dark);
+	cursor: pointer;
 }
 
 .space-after {
