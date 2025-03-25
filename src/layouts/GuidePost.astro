@@ -48,7 +48,7 @@ const { title, description, updatedDate, heroImage } = Astro.props;
                 margin: 0 0 0.5em 0;
             }
             .date {
-                margin-bottom: 0.5em;
+                margin-bottom: 2em;
                 color: rgb(var(--gray));
             }
             .author {
@@ -86,8 +86,9 @@ const { title, description, updatedDate, heroImage } = Astro.props;
             </article>
             <div class="prose">
                 <BlogPosts
-                    collection={"travelDiary"}
-                    directory={"travel-diary"}
+                    headline="Du suchst Inspiration für deine nächste Reise?"
+                    collection={"travelGuide"}
+                    directory={"travel-guide"}
                     numberOfPosts={6}
                 />
             </div>
