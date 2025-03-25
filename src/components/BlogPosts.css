@@ -9,6 +9,7 @@ ul {
 
 ul li {
     width: calc(50% - 1rem);
+    text-align: center;
 }
 
 ul li * {
