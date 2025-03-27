@@ -3,8 +3,8 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import BlogPosts from "../components/BlogPosts";
 import ImageHorizontal from "../components/Images/ImageHorizontal.astro";
+import DiaryTiles from "../components/DiaryTiles.astro";
 ---
 
 <!doctype html>
@@ -76,11 +76,9 @@ import ImageHorizontal from "../components/Images/ImageHorizontal.astro";
                 >
             </a>
             <div class="prose">
-                <BlogPosts
-                    collection={"travelDiary"}
-                    directory={"travel-diary"}
+                <DiaryTiles
+                    numberOfPosts={7}
                     headline={"Hier findest du die neusten Updates unserer Weltreise!"}
-                    numberOfPosts={6}
                 />
             </div>
         </main>

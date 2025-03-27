@@ -25,7 +25,7 @@ const travelGuide = defineCollection({
         title: z.string(),
         description: z.string(),
         updatedDate: z.coerce.date(),
-        heroImage: z.string().optional(),
+        heroImage: z.string(),
     }),
 });
 
@@ -38,7 +38,7 @@ const travelDiary = defineCollection({
         title: z.string(),
         description: z.string(),
         pubDate: z.coerce.date(),
-        heroImage: z.string().optional(),
+        heroImage: z.string(),
         author: z.string(),
     }),
 });
