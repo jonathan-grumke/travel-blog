@@ -1,0 +1,26 @@
+---
+import FormattedDate from "./FormattedDate.astro";
+import FormattedTime from "./FormattedTime.astro";
+
+interface Props {
+    date: Date;
+    name: string;
+    content: string;
+}
+
+const { date, name, content } = Astro.props;
+---
+
+<div class="comment">
+    <div class="name">
+        <p>{name}</p>
+    </div>
+    <div class="date-time">
+        <p>
+            <FormattedDate date={date} /> um <FormattedTime date={date} /> Uhr
+        </p>
+    </div>
+    <div class="content">
+        <p>{content}</p>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+---
+import { match } from "assert";
+import allComments from "../comments.json";
+
+interface Props {
+    slug: string;
+}
+
+const { slug } = Astro.props;
+
+const matchingComments = allComments.comments.filter((comment) => {
+    return comment.slug == slug;
+});
+
+const sortedComments = matchingComments.sort(
+    (a, b) => b.date.valueOf() - a.date.valueOf()
+);
+
+console.log(sortedComments);
+---
+
+<h2>{slug}</h2>
