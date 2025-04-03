@@ -1,0 +1,109 @@
+---
+const { slug } = Astro.props;
+
+const date = Number(new Date());
+---
+
+<style>
+    form p {
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+    form label {
+        display: block;
+        font-weight: bold;
+        color: rgb(var(--black));
+    }
+    form textarea {
+        height: 10em;
+    }
+    form input,
+    form textarea {
+        display: block;
+        width: 100%;
+        font-family: var(--font-family);
+        box-sizing: border-box;
+        padding: 0.7rem;
+        background-color: rgb(var(--gray-light));
+        outline: none;
+        border: solid 1px transparent;
+        border-radius: 8px;
+    }
+    form input:focus,
+    form textarea:focus {
+        border: solid 1px black;
+    }
+    #comment-submitted {
+        display: none;
+    }
+    .email-field {
+        display: none;
+    }
+</style>
+
+<section class="comments">
+    <h2 id="comments">Kommentare</h2>
+    <h3>Schreibe einen Kommentar</h3>
+    <p id="comment-submitted" class="comment-submitted">
+        Danke für deinen Kommentar! Er wird hier veröffentlicht sobald wir ihn
+        freigegeben haben.
+    </p>
+    <form
+        name="comment"
+        method="POST"
+        data-netlify="true"
+        id="comment-form"
+        netlify-honeypot="email-field"
+    >
+        <input type="hidden" name="slug" value={slug} />
+        <input type="hidden" name="date" value={date} />
+        <p>
+            <label for="comment">Kommentar:</label>
+            <textarea name="comment" id="comment" required></textarea>
+        </p>
+        <p>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required />
+        </p>
+        <p class="email-field">
+            <label for="email-field">E-Mail</label><input
+                type="email"
+                name="email-field"
+                id="email-field"
+            />
+        </p>
+        <p>
+            <button type="submit" class="button-primary">Absenden</button>
+        </p>
+    </form>
+    <script>
+        // @ts-nocheck
+        const handleSubmit = (event) => {
+            event.preventDefault();
+
+            const myForm = event.target;
+            const formData = new FormData(myForm);
+
+            fetch("/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: new URLSearchParams(formData.entries()).toString(),
+            })
+                .then(() => {
+                    myForm.reset();
+                    const commentSubmittedMessage =
+                        document.querySelector("#comment-submitted");
+                    commentSubmittedMessage.style.display = "block";
+                    commentSubmittedMessage.scrollIntoView();
+                })
+                .catch((error) => alert(error));
+        };
+
+        // @ts-ignore
+        document
+            .querySelector("#comment-form")
+            .addEventListener("submit", handleSubmit);
+    </script>
+</section>
