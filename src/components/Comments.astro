@@ -21,13 +21,17 @@ const date = Number(new Date());
     form textarea {
         display: block;
         width: 100%;
-        font-size: 1.2rem;
         font-family: var(--font-family);
-        padding: 0.2rem 0.5rem;
+        box-sizing: border-box;
+        padding: 0.7rem;
         background-color: rgb(var(--gray-light));
         outline: none;
-        border: none;
+        border: solid 1px transparent;
         border-radius: 8px;
+    }
+    form input:focus,
+    form textarea:focus {
+        border: solid 1px black;
     }
     #comment-submitted {
         display: none;
