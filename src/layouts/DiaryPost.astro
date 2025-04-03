@@ -7,10 +7,11 @@ import FormattedDate from "../components/FormattedDate.astro";
 import Author from "../components/Author.astro";
 import HeroImage from "../components/Images/HeroImage.astro";
 import DiaryTiles from "../components/DiaryTiles.astro";
+import Comments from "../components/Comments.astro";
 
 type Props = CollectionEntry<"travelDiary">["data"];
 
-const { title, description, pubDate, heroImage, author } = Astro.props;
+const { title, description, pubDate, heroImage, author, slug } = Astro.props;
 ---
 
 <html lang="de">
@@ -80,6 +81,9 @@ const { title, description, pubDate, heroImage, author } = Astro.props;
                     <slot />
                 </div>
             </article>
+            <div class="prose">
+                <Comments slug={slug} />
+            </div>
             <div class="prose">
                 <DiaryTiles
                     numberOfPosts={7}

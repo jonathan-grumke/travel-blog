@@ -40,6 +40,7 @@ const travelDiary = defineCollection({
         pubDate: z.coerce.date(),
         heroImage: z.string(),
         author: z.string(),
+        slug: z.string(),
     }),
 });
 
