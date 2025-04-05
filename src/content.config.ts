@@ -44,4 +44,24 @@ const travelDiary = defineCollection({
     }),
 });
 
-export const collections = { blog, travelGuide, travelDiary };
+const comment = z.object({
+    id: z.string(),
+    parentId: z.string().nullable(),
+    date: z.number(),
+    html: z.string(),
+    author: z.string(),
+});
+
+const commentsCollection = defineCollection({
+    type: "data",
+    schema: z.object({
+        comments: z.array(comment),
+    }),
+});
+
+export const collections = {
+    blog,
+    travelGuide,
+    travelDiary,
+    comments: commentsCollection,
+};
