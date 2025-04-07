@@ -33,12 +33,14 @@ switch (icon) {
     default:
         throw new Error(`"${icon}" is not a possible icon type`);
 }
+
+const html = "<strong>" + title + ":</strong> " + content;
 ---
 
 <div class="fun-fact">
     <img src={src} class="icon" />
     <div class="info-text-container">
-        <p><strong>{title}:</strong>{" "}{content}</p>
+        <p set:html={html} />
     </div>
 </div>
 
