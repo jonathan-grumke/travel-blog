@@ -1,0 +1,12 @@
+---
+import InfoBox from "./InfoBox.astro";
+
+interface Props {
+    title: string;
+    content: string;
+}
+
+const { title, content } = Astro.props;
+---
+
+<InfoBox title={title} icon="/icons/uhr.svg" content={content} />

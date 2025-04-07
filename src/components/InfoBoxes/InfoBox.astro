@@ -7,38 +7,11 @@ interface Props {
 
 const { icon, title, content } = Astro.props;
 
-let src;
-
-switch (icon) {
-    case "fun-fact":
-        src = "/icons/tipp.svg";
-        break;
-    case "tipp":
-        src = "/icons/tipp.svg";
-        break;
-    case "erde":
-        src = "/icons/erde.svg";
-        break;
-    case "auto":
-        src = "/icons/auto.svg";
-        break;
-    case "kosten":
-        src = "/icons/kosten.svg";
-        break;
-    case "eintritt":
-        src = "/icons/eintritt.svg";
-        break;
-    case "unterkunft":
-        src = "/icons/unterkunft.svg";
-    default:
-        throw new Error(`"${icon}" is not a possible icon type`);
-}
-
 const html = "<strong>" + title + ":</strong> " + content;
 ---
 
 <div class="fun-fact">
-    <img src={src} class="icon" />
+    <img src={icon} class="icon" />
     <div class="info-text-container">
         <p set:html={html} />
     </div>
