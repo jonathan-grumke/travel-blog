@@ -5,9 +5,9 @@ import "../styles/global.css";
 import { SITE_TITLE } from "../consts";
 
 interface Props {
-	title: string;
-	description: string;
-	image?: string;
+    title: string;
+    description: string;
+    image?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -21,10 +21,10 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link
-	rel="alternate"
-	type="application/rss+xml"
-	title={SITE_TITLE}
-	href={new URL("rss.xml", Astro.site)}
+    rel="alternate"
+    type="application/rss+xml"
+    title={SITE_TITLE}
+    href={new URL("rss.xml", Astro.site)}
 />
 <meta name="generator" content={Astro.generator} />
 
@@ -49,3 +49,7 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- Netlify authentication -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+></script>
