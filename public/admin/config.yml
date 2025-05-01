@@ -4,6 +4,7 @@ backend:
     branch: preview
 
 media_folder: "src/assets/uploads"
+public_folder: "uploads"
 
 logo_url: "https://suninmypocket.com/Logo.svg"
 
