@@ -1,5 +1,6 @@
 backend:
     name: git-gateway
+    repo: jonathan-grumke/travel-blog
     branch: preview
 
 media_folder: "src/assets"
